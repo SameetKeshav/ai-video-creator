@@ -38,7 +38,7 @@ def plan(prompt: str, config: Config):
     ]
   }
   
-  response = requests.post(url, json=payload)
+  response = requests.post(url, json=payload, headers=headers)
   response.raise_for_status()
   
   content = response.json()["choices"][0]["message"]["content"]
